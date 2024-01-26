@@ -3,19 +3,20 @@ import { Image, ImageBackground, StyleSheet, View, Text } from "react-native"
 
 const WelcomeScreen = () => {
   return (
-    <ImageBackground 
-      style = {styles.background}
-      source={require('../background.jpg')}>
-      <View style ={styles.container}>
-        <Image 
-        style={styles.logo}
-        source={require('../logo.png')}/>
-        <Text>Sell what you need</Text>
-      </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
-
-    </ImageBackground>
+   
+      <ImageBackground
+        style = {styles.background}
+        source={require('../background.jpg')}>
+        <View style ={styles.container}>
+          <Image
+          style={styles.logo}
+          source={require('../logo.png')}/>
+          <Text>Sell what you need</Text>
+        </View>
+        <View style={styles.loginButton}></View>
+        <View style={styles.registerButton}></View>
+      </ImageBackground>
+  
   
   )
 }
