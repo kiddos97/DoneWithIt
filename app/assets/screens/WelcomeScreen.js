@@ -11,7 +11,8 @@ const WelcomeScreen = () => {
     <Image 
     style={styles.logo}
     source={require("../logo.png")}></Image>
-    <Text>Sell what you dont' need</Text></View>
+    <Text>Sell what you dont' need</Text>
+    </View>
     <View
     style={styles.loginButton}
     ></View>
