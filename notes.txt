@@ -1,0 +1,10 @@
+<TouchableWithoutFeedback onPress={() => console.log('image tapped')}><Image source={require('./assets/favicon.png')}/></TouchableWithoutFeedback>
+
+
+onPress={() => Alert.alert('My title', "My Message",[
+        {text: 'yes'},
+        {text: 'No'}
+      ])}/>
+
+        <Button color="blue" title='Click me' 
+      onPress={() => Alert.prompt("My title", "My Message",text => console.log(text))}/>

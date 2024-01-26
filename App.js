@@ -1,25 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableWithoutFeedback} from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView, TouchableWithoutFeedback, Button,Alert, Platform, Dimensions} from 'react-native'
 export default function App() {
 
   console.log('App executed')
-
+  console.log(Dimensions.get('screen'))
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>I am home</Text>
-      <TouchableWithoutFeedback onPress={() => console.log('image tapped')}><Image source={require('./assets/favicon.png')}/></TouchableWithoutFeedback>
+    <View style={{
+      backgroundColor:"dodgerblue",
+      width: '100%',
+      height: '30%'
+    }}></View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
-    justifyContent : "center",
-    alignItems: "center"
-
+    backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? 20 : 0
   },
+
 });
