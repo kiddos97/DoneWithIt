@@ -1,11 +1,17 @@
 import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
+import Icon from 'react-native-vector-icons/AntDesign';
+import DeleteIcon  from "react-native-vector-icons/AntDesign"// Replace 'FontAwesome' with the desired icon set
 
 const ViewImageScreen = () => {
   return (
     <View style={styles.container}>
-        <View style={styles.closeIcon}></View>
-        <View style={styles.deleteIcon}></View>
+        <View style={styles.closeIcon}>
+            <Icon  name="close" size={30} color='#fff'/>
+        </View>
+        <View style={styles.deleteIcon}>
+            <DeleteIcon  name="delete" size={30} color="#fff"/>
+        </View>
         <Image
         resizeMode='contain'
         style={styles.image}
@@ -22,23 +28,15 @@ const styles = StyleSheet.create({
         flex: 1
     },
     closeIcon:{
-        height: 50,
-        width:50,
-        backgroundColor:'tomato',
         position:'absolute',
-        top:40,
+        top:60,
         right: 30,
-        borderRadius: 10
 
     },
     deleteIcon:{
-        height: 50,
-        width:50,
-        backgroundColor:'tomato',
         position:'absolute',
-        top:40,
+        top:60,
         left: 30,
-        borderRadius: 10
 
     },
   

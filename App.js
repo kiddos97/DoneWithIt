@@ -7,11 +7,12 @@ import ViewImageScreen from './app/assets/screens/ViewImageScreen';
 import ButtonExcerise from './app/assets/screens/ButtonExcerise';
 
 import Card from './components/Card';
-import ListingDetails from './components/ListingDetails';
+import ListingDetails from './app/assets/screens/ListingDetails';
 
 
 
 export default function App() {
+  console.log('app executed')
   
   return <ViewImageScreen/>
 

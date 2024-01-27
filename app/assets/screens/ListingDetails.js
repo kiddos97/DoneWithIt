@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, StyleSheet, ImageComponent, Image,Text } from 'react-native'
 
-import ListItem from './ListItem'
+import ListItem from '../../../components/ListItem'
 
 const ListingDetails = () => {
   return (
