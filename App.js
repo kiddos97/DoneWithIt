@@ -20,7 +20,7 @@ export default function App() {
     <Card 
     title="Red Jacket"
     subTitle="$100"
-    image="./app/assests/jacket.jpg"/>
+    image={require("./app/assets/jacket.jpg")}/>
   </View>
 
 }

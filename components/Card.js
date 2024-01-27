@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, StyleSheet} from 'react-native'
+import { View, StyleSheet,Image,Text} from 'react-native'
 
 const Card = ({title, subTitle, image}) => {
   return (
    <View style={styles.card}>
-    <Image source={require(image)}/>
+    <Image style={styles.image} source={image}/>
     <Text>{title}</Text>
     <Text>{subTitle}</Text>
    </View>
@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: '#fff',
         marguinBottom: 20
+    },
+    image:{
+        width:'100%',
+        height:200
     }
 })
 
