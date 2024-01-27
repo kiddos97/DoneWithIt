@@ -79,3 +79,26 @@ const styles = StyleSheet.create({
         </View>
       </View>
 
+
+  return (
+    <ImageBackground
+      style={styles.background}
+      source={require('../background.jpg')}>
+      <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={require('../logo.png')} />
+        <Text style={styles.text}>Sell what you need</Text>
+      </View>
+      <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+      <View style={styles.space} />
+      <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
+        <Text style={styles.buttonText}>Register</Text>
+      </TouchableOpacity>
+    </ImageBackground>
+  );
+}
+
+

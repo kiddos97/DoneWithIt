@@ -9,19 +9,9 @@ import ButtonExcerise from './app/assets/screens/ButtonExcerise';
 
 
 export default function App() {
-
-
-
-  return <ButtonExcerise/>
+  
+  return <WelcomeScreen/>
 
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-
-  },
-
-});
