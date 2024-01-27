@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableWithoutFeedback, 
 import { useDeviceOrientation } from "@react-native-community/hooks"
 import WelcomeScreen from './app/assets/screens/WelcomeScreen';
 import ViewImageScreen from './app/assets/screens/ViewImageScreen';
+import ButtonExcerise from './app/assets/screens/ButtonExcerise';
 
 
 
@@ -11,7 +12,7 @@ export default function App() {
 
 
 
-  return <ViewImageScreen/>
+  return <ButtonExcerise/>
 
 }
 
