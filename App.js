@@ -6,11 +6,22 @@ import WelcomeScreen from './app/assets/screens/WelcomeScreen';
 import ViewImageScreen from './app/assets/screens/ViewImageScreen';
 import ButtonExcerise from './app/assets/screens/ButtonExcerise';
 
+import Card from './components/Card';
+
 
 
 export default function App() {
   
-  return <WelcomeScreen/>
+  return <View style={{
+    backgroundColor:'#f8f4f4',
+    padding: 20,
+    paddingTop: 100
+  }}>
+    <Card 
+    title="Red Jacket"
+    subTitle="$100"
+    image="./app/assests/jacket.jpg"/>
+  </View>
 
 }
 
