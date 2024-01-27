@@ -6,13 +6,13 @@ import ListItem from '../../../components/ListItem'
 const ListingDetails = () => {
   return (
   <View>
-    <Image style={styles.image} source={require('../app/assets/jacket.jpg')}/>
+    <Image style={styles.image} source={require('../jacket.jpg')}/>
       <View style={styles.detailsContainer}>
           <Text style={styles.title}>Red Jacket for sale</Text>
           <Text style={styles.price}>$100</Text>
           <View style={styles.user}> 
               <ListItem
-              image={require('../app/assets/person.jpg')}
+              image={require('../person.jpg')}
               title='Emmanuel Imarhiagbe'
               subTitle='5 Listings'
               />

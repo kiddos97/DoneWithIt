@@ -8,13 +8,14 @@ import ButtonExcerise from './app/assets/screens/ButtonExcerise';
 
 import Card from './components/Card';
 import ListingDetails from './app/assets/screens/ListingDetails';
+import MessageScreen from './app/assets/screens/MessageScreen';
 
 
 
 export default function App() {
   console.log('app executed')
   
-  return <ViewImageScreen/>
+  return <MessageScreen/>
 
 }
 
