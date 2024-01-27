@@ -13,13 +13,12 @@ const WelcomeScreen = () => {
         <Image
           style={styles.logo}
           source={require('../mango.png')} />
-        <Text style={styles.text}>Sell What You Don't Need</Text>
+        <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
-        <View style={styles.space} />
         <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
@@ -37,7 +36,8 @@ const styles = StyleSheet.create({
   },
   buttonContainer:{
     width:'100%',
-    padding:20
+    padding:20,
+    marginVertical:20,
   },
   buttonText:{
     fontSize:20,
@@ -64,14 +64,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
     borderRadius:30,
     padding: 10,
-    marginBottom:30
   },
-  space: {
-    height: 10 // Adjust this value for the desired space
-  },
-  text:{
-    marginTop:10,
-    fontSize:20
+  tagline:{
+    fontWeight:"600",
+    fontSize:25,
+    paddingVertical:20
   },
 
 })
