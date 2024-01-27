@@ -7,20 +7,23 @@ const WelcomeScreen = () => {
   return (
     <ImageBackground
       style={styles.background}
-      source={require('../background.jpg')}>
+      source={require('../background.jpg')}
+      blurRadius={10}>
       <View style={styles.container}>
         <Image
           style={styles.logo}
-          source={require('../logo.png')} />
-        <Text style={styles.text}>Sell what you need</Text>
+          source={require('../mango.png')} />
+        <Text style={styles.text}>Sell What You Don't Need</Text>
       </View>
-      <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
-        <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-      <View style={styles.space} />
-      <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
-        <Text style={styles.buttonText}>Register</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+        <View style={styles.space} />
+        <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
+          <Text style={styles.buttonText}>Register</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 }
@@ -30,16 +33,16 @@ const styles = StyleSheet.create({
   background:{
     flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  text:{
-    fontSize:15
+  buttonContainer:{
+    width:'100%',
+    padding:20
   },
-  loginButton:{
-    backgroundColor:'tomato',
-    width:'85%',
-    padding:20,
-    borderRadius: 30,
+  buttonText:{
+    fontSize:20,
+    textAlign:"center",
+    color:'white'
   },
   container:{
     position:'absolute',
@@ -47,24 +50,28 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   logo:{
-    width: 100,
+    width: 200,
     height: 100
   },
-  buttonText:{
-    fontSize:20,
-    textAlign:"center",
-    color:'white'
+
+  loginButton:{
+    backgroundColor:'tomato',
+    padding:10,
+    borderRadius: 30,
   },
   registerButton:{
     backgroundColor:'#4ecdc4',
-    width: '85%',
     marginTop: 10,
     borderRadius:30,
-    padding: 20,
+    padding: 10,
     marginBottom:30
   },
   space: {
     height: 10 // Adjust this value for the desired space
+  },
+  text:{
+    marginTop:10,
+    fontSize:20
   },
 
 })
