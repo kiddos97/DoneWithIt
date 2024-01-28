@@ -5,9 +5,8 @@ import ListItem from '../../../components/ListItem'
 import ListitemSeparator from '../../../components/ListitemSeparator'
 
 
-const message =[ {
-
-
+const message =[
+  {
     id: 1, title: 't1', description: 'D1',image:require('../person.jpg')
 },
 
