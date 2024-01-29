@@ -10,13 +10,15 @@ import Card from './components/Card';
 import ListingDetails from './app/assets/screens/ListingDetails';
 import MessageScreen from './app/assets/screens/MessageScreen';
 import AccountScreen from './app/assets/screens/AccountScreen';
-
+import ListingScreen from './app/assets/screens/ListingScreen';
 
 
 export default function App() {
   console.log('app executed')
+
+
   
-  return <AccountScreen/>
+  return <ListingScreen/>
 
 }
 
