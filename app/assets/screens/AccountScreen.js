@@ -29,7 +29,6 @@ const AccountScreen = () => {
                 ImageComponent={<Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>}
                 />}
                 />
-                
               </View>
           </View>
           </View>

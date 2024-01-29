@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
         borderRadius:50,
     },
     image:{
-        width:70,
-        height: 70,
+        width:50,
+        height: 50,
         borderRadius: 50,
-
+        marginRight:10
     },
     title:{
         fontWeight: 500,
