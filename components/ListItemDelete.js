@@ -1,15 +1,17 @@
 import React from 'react'
-import { StyleSheet,TouchableOpacity,View,Text } from 'react-native' 
+
+import { StyleSheet,TouchableOpacity,View,Text,TouchableWithoutFeedback } from 'react-native' 
+
 
 const ListItemDelete = ( {onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress}>
         <View
         style={styles.container}
           >
             <Text style={styles.text}>Delete</Text>
           </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   )
 }
 const styles = StyleSheet.create({

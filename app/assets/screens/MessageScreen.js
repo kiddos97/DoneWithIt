@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar,View ,Text,TouchableOp, TouchableOpacity} from 'react-native'
 import ListItem from '../../../components/ListItem'
 
@@ -6,19 +7,19 @@ import ListItemDelete from '../../../components/ListItemDelete'
 
 import ListitemSeparator from '../../../components/ListitemSeparator'
 
+import { message } from '../../../components/Message';
 
-const message =[
-  {
-    id: 1, title: 't1', description: 'D1',image:require('../person.jpg')
-},
 
-{
-    id: 2, title: 't2', description: 'D2',image:require('../person.jpg')
-},
-
-]
 
 const MessageScreen = () => {
+
+  const [messages, setMessage] = useState(message);
+
+  const handleDelete = (message) => {
+    
+    setMessage(messages.filter((m) => m.id !== message.id));
+
+  }
   return (
     <SafeAreaView style={styles.screen}>
       <FlatList
@@ -31,7 +32,7 @@ const MessageScreen = () => {
             image={item.image}
             onPress={() => console.log('message selected', item)}
             renderRightActions={() => 
-            <ListItemDelete onPress={() => console.log(item)}/>}
+            <ListItemDelete onPress={ () => handleDelete(item)}/>}
             renderLeftActions={() => (
               <TouchableOpacity onPress={() => console.log('archived pressed')}>   
                 <View
