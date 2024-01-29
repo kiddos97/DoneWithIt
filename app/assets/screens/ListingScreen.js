@@ -1,43 +1,45 @@
-import React from 'react'
+import React from 'react';
+import { FlatList, View, StyleSheet } from 'react-native';
+import Card from '../../../components/Card'; // Import or define the Card component
 
-import { FlatList, Text, View} from 'react-native'
-
-
-const listing =[
-    [
-        {
-            id: 1,
-        title: 'red jacket for sale',
-        price: 100,
-        image: require('../jacket.jpg')
-    },
-    {
-        id: 2,
-    title: 'red jacket for sale',
+const listings = [
+  {
+    id: 1,
+    title: 'Red Jacket for Sale',
     price: 100,
-    image: require('../jacket.jpg')
-},
-    ]
-]
+    image: require('../jacket.jpg'),
+  },
+  {
+    id: 2,
+    title: 'Blue Jacket for Sale',
+    price: 120,
+    image: require('../bluejacket.jpg'),
+  },
+];
 
 const ListingScreen = () => {
   return (
-   <View>
-    <FlatList
-    data={listing}
-    keyExtractor={(listing) => listing.id.toString()}
-    renderItem={({item}) => 
-    
-    <Card
-    title={item.title}
-    subTitle={'$' + item.price}
-    image={item.image}
-    />}
-    
-    />
-   
-   </View>
-  )
-}
+    <View style={styles.screen}>
+      <FlatList
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            title={item.title}
+            subTitle={'$ ' + item.price}
+            image={item.image}
+          />
+        )}
+      />
+    </View>
+  );
+};
 
-export default ListingScreen
+const styles = StyleSheet.create({
+    screen:{
+        padding: 30
+    }
+})
+
+export default ListingScreen;
+
