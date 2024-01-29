@@ -12,7 +12,17 @@ import MessageScreen from './app/assets/screens/MessageScreen';
 import AccountScreen from './app/assets/screens/AccountScreen';
 import ListingScreen from './app/assets/screens/ListingScreen';
 import AppTextInput from './components/AppTextInput';
+import AppPicker from './components/AppPicker';
 
+
+
+const categories = [
+
+  {label: "Furniture", value:1},
+  {label: "Clothing", value:2},
+  {label: "Cameras", value:3},
+  
+]
 
 export default function App() {
   console.log('app executed')
@@ -22,9 +32,8 @@ export default function App() {
   
   return (
   <SafeAreaView>
-   <View style={styles.container}>
-     <AppTextInput icon="email" placeholder="username"/>
-   </View>
+  <AppPicker items = {categories} icon="apps" placeholder="Category" />
+  <AppTextInput icon="email" placeholder="Email"/>
   </SafeAreaView>
   
   )
