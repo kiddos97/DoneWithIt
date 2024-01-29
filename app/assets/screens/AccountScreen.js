@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff',
         
         
-    },
+    },  
     space:{
         height:30
     }
