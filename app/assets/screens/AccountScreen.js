@@ -11,15 +11,15 @@ const menuItems = [
     {
         title:"My listings",
         icon:{
-            name: 'email',
-            backgroundColor:"#fff"
+            name: 'format-list-bulleted',
+            backgroundColor:"red"
         }
     },
     {
         title:"My Messages",
         icon:{
             name: 'email',
-            backgroundColor:"#fff"
+            backgroundColor:"green"
         }
     }
 ]
@@ -27,10 +27,10 @@ const AccountScreen = () => {
   return (
     <View style={styles.screen}>
           <View>
-            <View style={styles.container}>
+            <View style={styles.Accountcontainer}>
                 <ListItem
                 title='Emmanuel Imarhiagbe'
-                subTitle="Hi"
+                subTitle="Osaroimarhiagbe@gmail.com"
                 image={require('../person.jpg')}
                 />
             </View>
@@ -42,7 +42,7 @@ const AccountScreen = () => {
                 renderItem={({ item }) =>   
                 <ListItem
                 title={item.title}
-                ImageComponent={<Icon name={item.icon.name} color={item.icon.backgroundColor}/>}
+                ImageComponent={<Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>}
                 />}
                 />
                 
@@ -54,12 +54,15 @@ const AccountScreen = () => {
 
 const styles = StyleSheet.create({
 
+    Accountcontainer:{
+        marginVertical: 70,
+        backgroundColor:'#fff',  
+    },
     screen:{
         backgroundColor:'lightgrey',
         flex:1
     },
     container:{
-        marginVertical: 50,
         backgroundColor:'#fff',
         
         

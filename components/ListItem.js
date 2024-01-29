@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     title:{
         fontWeight: 500,
-        marginBottom:10
+        marginBottom:5
         
     },
     subTitle:{
