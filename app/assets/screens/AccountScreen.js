@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         
     },
     space:{
-        height:20
+        height:30
     }
    
 })
