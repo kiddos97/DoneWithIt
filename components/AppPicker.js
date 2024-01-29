@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import color from "../config/colors";
 import PickerItem from './PickerItem';
 
-const AppPicker = ({ icon,items,placeholder}) => {
+const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder}) => {
 
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -21,7 +21,7 @@ const AppPicker = ({ icon,items,placeholder}) => {
         style={styles.icon}
         color={color.medium}/>}
         <View style={styles.textContainer}>
-            <Text>{placeholder}</Text>
+            <Text>{ selectedItem ? selectedItem.label : placeholder}</Text>
         </View>
         <MaterialCommunityIcons
         name="chevron-down"
@@ -38,7 +38,11 @@ const AppPicker = ({ icon,items,placeholder}) => {
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => 
                 <PickerItem label={item.label}
-                onPress={() => console.log(item)}/>
+                onPress={() => {
+
+                    setModalVisible(false)
+                    onSelectItem(item)
+                }}/>
             }
         />
         </SafeAreaView>

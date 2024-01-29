@@ -27,12 +27,17 @@ const categories = [
 export default function App() {
   console.log('app executed')
 
-  const [firstName, setfirstName] = useState('');
+  const [category, setCategory] = useState('');
 
   
   return (
   <SafeAreaView>
-  <AppPicker items = {categories} icon="apps" placeholder="Category" />
+  <AppPicker
+    selectedItem={category}
+    onSelectItem={ item => setCategory(item)}
+    items = {categories} 
+    icon="apps" 
+    placeholder="Category" />
   <AppTextInput icon="email" placeholder="Email"/>
   </SafeAreaView>
   
