@@ -3,7 +3,7 @@ import { View, StyleSheet, Image,Text, TouchableHighlight } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-const ListItem = ({ title, subTitle, image, onPress, renderRightActions,renderLeftActions}) => {
+const ListItem = ({ title, subTitle, image, ImageComponent,onPress, renderRightActions,renderLeftActions}) => {
 
 
   return (
@@ -13,10 +13,13 @@ const ListItem = ({ title, subTitle, image, onPress, renderRightActions,renderLe
     underlayColor="grey"
     onPress={onPress}>
         <View style={styles.container}>
-         <Image style={styles.image} source={image} />
-         <View>
+        <View style={styles.iconContainer}>
+        {ImageComponent}
+        </View>
+         {image && <Image style={styles.image} source={image} />}
+         <View style={styles.detailsContainer}>
              <Text style={styles.title}>{title}</Text>
-             <Text  style={styles.subTitle} >{subTitle}</Text>
+             { subTitle && <Text  style={styles.subTitle} >{subTitle}</Text>}
          </View>
         </View>
     </TouchableHighlight>
@@ -33,14 +36,24 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         padding: 15
     },
+    detailsContainer:{
+        marginLeft:10,
+        justifyContent:'center'
+    },
+    iconContainer:{
+        borderRadius:35,
+        padding:10
+    },
     image:{
-        width:70,
-        height: 70,
+        width:50,
+        height: 50,
         borderRadius: 35,
         marginRight: 10
     },
     title:{
-        fontWeight: 500
+        fontWeight: 500,
+        marginBottom:10
+        
     },
     subTitle:{
         color:'#6e6969'
