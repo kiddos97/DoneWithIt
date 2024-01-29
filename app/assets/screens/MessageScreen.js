@@ -13,17 +13,20 @@ import { message } from '../../../components/Message';
 
 const MessageScreen = () => {
 
-  const [messages, setMessage] = useState(message);
+  const [messages, setMessages] = useState(message);
+  const [refreshing,setRefreshing] = useState(false);
 
-  const handleDelete = (message) => {
+  const handleDelete = (selectedMessage) => {
+ 
+    const newMessages = messages.filter((m) => m.id !== selectedMessage.id);
     
-    setMessage(messages.filter((m) => m.id !== message.id));
-
-  }
+    setMessages(newMessages);
+  };
+  
   return (
     <SafeAreaView style={styles.screen}>
       <FlatList
-        data={message}
+        data={messages}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <ListItem
@@ -50,6 +53,10 @@ const MessageScreen = () => {
           
         )}
         ItemSeparatorComponent={ListitemSeparator} // Make sure ListitemSeparator is defined or import correctly
+        refreshing={refreshing} //pull to refresh
+        onRefresh={() => {setMessages([  {
+          id: 2, title: 't2', description: 'D2',image:require('../person.jpg')
+      },])}}
       />
     </SafeAreaView>
   );
@@ -57,7 +64,8 @@ const MessageScreen = () => {
 
 const styles = StyleSheet.create({
     screen:{
-        paddingtop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+        flex:1
     },
     text:{
     color:'#fff',
