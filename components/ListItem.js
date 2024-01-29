@@ -3,7 +3,7 @@ import { View, StyleSheet, Image,Text, TouchableHighlight } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-const ListItem = ({ title, subTitle, image, ImageComponent,onPress, renderRightActions,renderLeftActions}) => {
+const ListItem = ({ title, subTitle, image, IconComponent,onPress, renderRightActions,renderLeftActions}) => {
 
 
   return (
@@ -14,7 +14,7 @@ const ListItem = ({ title, subTitle, image, ImageComponent,onPress, renderRightA
     onPress={onPress}>
         <View style={styles.container}>
         <View style={styles.iconContainer}>
-        {ImageComponent}
+        {IconComponent}
         </View>
          {image && <Image style={styles.image} source={image} />}
          <View style={styles.detailsContainer}>
