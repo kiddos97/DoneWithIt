@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: '#fff',
         marguinBottom: 20,
-        overflow:'hidden'
+        overflow:'hidden',
     },
     image:{
         width:'100%',

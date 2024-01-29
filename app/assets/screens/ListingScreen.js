@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import Card from '../../../components/Card'; // Import or define the Card component
+import ListitemSeparator from '../../../components/ListitemSeparator';
 
 const listings = [
   {
@@ -18,6 +19,9 @@ const listings = [
 ];
 
 const ListingScreen = () => {
+    const renderSeparator = () => {
+        return <View style={{ height: 20 }} />; // Adjust the height as needed
+      };
   return (
     <View style={styles.screen}>
       <FlatList
@@ -30,6 +34,7 @@ const ListingScreen = () => {
             image={item.image}
           />
         )}
+        ItemSeparatorComponent={renderSeparator}
       />
     </View>
   );
@@ -37,7 +42,8 @@ const ListingScreen = () => {
 
 const styles = StyleSheet.create({
     screen:{
-        padding: 30
+        padding: 30,
+        backgroundColor:'lightgrey'
     }
 })
 
