@@ -43,7 +43,9 @@ const ListingScreen = () => {
 const styles = StyleSheet.create({
     screen:{
         padding: 30,
-        backgroundColor:'lightgrey'
+        paddingTop:70,
+        backgroundColor:'lightgrey',
+        flex:1
     }
 })
 
