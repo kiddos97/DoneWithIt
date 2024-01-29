@@ -1,6 +1,8 @@
 import React from 'react'
-import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar,View ,Text} from 'react-native'
+import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar,View ,Text,TouchableOp, TouchableOpacity} from 'react-native'
 import ListItem from '../../../components/ListItem'
+
+import ListItemDelete from '../../../components/ListItemDelete'
 
 import ListitemSeparator from '../../../components/ListitemSeparator'
 
@@ -28,26 +30,21 @@ const MessageScreen = () => {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log('message selected', item)}
-            renderRightActions={() => (
-              <View
-                style={{
-                  backgroundColor: 'red',
-                  width: 70,
-                  height: '100%', // Adjust height as needed
-                }}
-              ></View>
-            )}
+            renderRightActions={() => 
+            <ListItemDelete onPress={() => console.log(item)}/>}
             renderLeftActions={() => (
-            <View
-            
-            style={{
-              width:70,
-              backgroundColor:'blue',
-              height:'100%',
-              justifyContent:'center',
-              alignItems:'center'
-            }}
-            ><Text style={styles.text}>Archive</Text></View>)}
+              <TouchableOpacity onPress={() => console.log('archived pressed')}>   
+                <View
+              style={{
+                width:70,
+                backgroundColor:'blue',
+                height:'100%',
+                justifyContent:'center',
+                alignItems:'center'
+              }}
+              ><Text style={styles.text}>Archive</Text></View></TouchableOpacity>
+         
+            )}
           />
           
         )}
@@ -63,7 +60,8 @@ const styles = StyleSheet.create({
     },
     text:{
     color:'#fff',
-    fontWeight:400
+    fontWeight:'bold',
+    fontSize:15
     }
 })
 
