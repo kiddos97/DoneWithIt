@@ -30,6 +30,13 @@ const AccountScreen = () => {
                 />}
                 />
               </View>
+              <View style={styles.space}></View>
+              <View style={styles.container}>
+              <ListItem
+               title='Log Out'
+               ImageComponent={<Icon name='logout' backgroundColor='#ffe66d'/>} 
+                />
+                </View>
           </View>
           </View>
   )
@@ -49,6 +56,9 @@ const styles = StyleSheet.create({
         
         
     },
+    space:{
+        height:20
+    }
    
 })
 export default AccountScreen
