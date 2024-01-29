@@ -3,26 +3,10 @@ import { Image, View,StyleSheet,Text, FlatList } from 'react-native'
 import ListItem from '../../../components/ListItem'
 import Icon from '../../../components/Icon';
 import ListitemSeparator from '../../../components/ListitemSeparator';
+import { menuItems} from '../../../components/MenuItems';
 
 
 
-const menuItems = [
-
-    {
-        title:"My listings",
-        icon:{
-            name: 'format-list-bulleted',
-            backgroundColor:"red"
-        }
-    },
-    {
-        title:"My Messages",
-        icon:{
-            name: 'email',
-            backgroundColor:"green"
-        }
-    }
-]
 const AccountScreen = () => {
   return (
     <View style={styles.screen}>
@@ -53,7 +37,6 @@ const AccountScreen = () => {
 }
 
 const styles = StyleSheet.create({
-
     Accountcontainer:{
         marginVertical: 70,
         backgroundColor:'#fff',  

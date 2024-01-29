@@ -41,14 +41,13 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     iconContainer:{
-        borderRadius:35,
-        padding:10
+        borderRadius:50,
     },
     image:{
-        width:50,
-        height: 50,
-        borderRadius: 35,
-        marginRight: 10
+        width:70,
+        height: 70,
+        borderRadius: 50,
+
     },
     title:{
         fontWeight: 500,
