@@ -18,22 +18,26 @@ const LoginScreen = () => {
                 style={styles.logo} 
                 source={require('../logo.png')}
                 />
-                <AppTextInput
-                    autoCapitalize="none"
-                    autoCorrect={false}
-                    icon='email'
-                    keyboardType="email-address"
-                    placeholder="Email"
-                />
-                <AppTextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  icon='lock'
-                  keyboardType="email-address"
-                  placeholder="Password"
-                  secureTextEntry
-                  textContentType="password"
-                />
+                <View style={styles.Appbutton}>
+                    <AppTextInput
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        icon='email'
+                        keyboardType="email-address"
+                        placeholder="Email"
+                    />
+                </View>
+                <View style={styles.Appbutton}>
+                    <AppTextInput
+                      autoCapitalize="none"
+                      autoCorrect={false}
+                      icon='lock'
+                      keyboardType="email-address"
+                      placeholder="Password"
+                      secureTextEntry
+                      textContentType="password"
+                    />
+                </View>
                 <AppButton title="Login" onPress={() => console.log()} />
             </SafeAreaView>
    
@@ -47,6 +51,10 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         marginTop:50,
         marginBottom: 20
-    }
+    },
+    Appbutton:{
+        width:'100%',
+        padding:10,
+      },
 })
 export default LoginScreen
