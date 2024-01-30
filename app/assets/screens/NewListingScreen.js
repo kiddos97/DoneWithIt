@@ -26,7 +26,7 @@ const NewListingScreen = () => {
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
-             {({ handleChange, handleSubmit, errors, setFieldTouched, touched,}) => (
+             {({ handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
                 <>
                 <View style={styles.container} >
                 <AppTextInput 
@@ -37,16 +37,25 @@ const NewListingScreen = () => {
                 { touched.title && <Text style={{color:'red'}}>{errors.title}</Text>}
                 <AppTextInput 
                 keyboardType="numeric"
+                onBlur={() => setFieldTouched('price')}
+                onChangeText={handleChange('price')}
                 placeholder="Price"/>
                 { touched.price && <Text style={{color:'red'}}>{errors.price}</Text>}
-                <AppPicker 
+                <AppPicker
+                onBlur={() => setFieldTouched('category')} 
+                onChangeText={handleChange('category')}
                 selectedItem={category}
-                onSelectItem={(item) => setCategory(item)}
+                onSelectItem={(item) => {
+                    setCategory(item);
+                  }}
                 items={categories}
                 placeholder="Category"
                 />
                 { touched.category && <Text style={{color:'red'}}>{errors.category}</Text>}
-                <AppTextInput placeholder="Description"/>
+                <AppTextInput 
+                 onBlur={() => setFieldTouched('description')}
+                 onChangeText={handleChange('description')}
+                placeholder="Description"/>
                 { touched.description && <Text style={{color:'red'}}>{errors.description}</Text>}
                 <AppButton title="POST" onPress={handleSubmit}/>
             </View>
@@ -65,4 +74,3 @@ const styles = StyleSheet.create({
     }
 })
 export default NewListingScreen
-3
