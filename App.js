@@ -32,7 +32,7 @@ export default function App() {
   
   return (
 
- <NewListingScreen/>
+ <NewListingScreen name="Camera"/>
     
   );
 

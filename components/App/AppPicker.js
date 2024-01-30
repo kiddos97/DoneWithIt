@@ -39,7 +39,6 @@ const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder}) => {
             renderItem={({ item }) => 
                 <PickerItem label={item.label}
                 onPress={() => {
-
                     setModalVisible(false)
                     onSelectItem(item)
                 }}/>

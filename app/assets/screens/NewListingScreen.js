@@ -16,17 +16,17 @@ const validationSchema = Yup.object().shape({ // Yup form validation
     description: Yup.string().label("Description")
 })
 
-const NewListingScreen = () => {
-    const [category, setCategory] = useState('');
+const NewListingScreen = ({ name }) => {
+
   return (
     
     <SafeAreaView>
         <Formik
-          initialValues={{title:'',price:'',category:null,description:''}}
+          initialValues={{title:'',price:'',description:'',category:null}}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
-             {({ handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
+             {({ handleChange, handleSubmit, errors, setFieldTouched, touched, setFieldValue,values}) => (
                 <>
                 <View style={styles.container} >
                 <AppTextInput 
@@ -42,14 +42,12 @@ const NewListingScreen = () => {
                 placeholder="Price"/>
                 { touched.price && <Text style={{color:'red'}}>{errors.price}</Text>}
                 <AppPicker
-                onBlur={() => setFieldTouched('category')} 
-                onChangeText={handleChange('category')}
-                selectedItem={category}
-                onSelectItem={(item) => {
-                    setCategory(item);
-                  }}
                 items={categories}
                 placeholder="Category"
+                selectedItem={values[name]}
+                onSelectItem={(item) => {
+                    setFieldValue(name,item);
+                  }}
                 />
                 { touched.category && <Text style={{color:'red'}}>{errors.category}</Text>}
                 <AppTextInput 
