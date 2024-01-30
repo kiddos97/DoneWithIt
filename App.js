@@ -13,35 +13,23 @@ import AccountScreen from './app/assets/screens/AccountScreen';
 import ListingScreen from './app/assets/screens/ListingScreen';
 import AppTextInput from './components/AppTextInput';
 import AppPicker from './components/AppPicker';
+import LoginScreen from './app/assets/screens/LoginScreen';
 
 
-
-const categories = [
-
-  {label: "Furniture", value:1},
-  {label: "Clothing", value:2},
-  {label: "Cameras", value:3},
-  
-]
 
 export default function App() {
   console.log('app executed')
 
-  const [category, setCategory] = useState('');
+
 
   
   return (
-  <SafeAreaView>
-  <AppPicker
-    selectedItem={category}
-    onSelectItem={ item => setCategory(item)}
-    items = {categories} 
-    icon="apps" 
-    placeholder="Category" />
-  <AppTextInput icon="email" placeholder="Email"/>
-  </SafeAreaView>
+
+    <LoginScreen/>
+  );
+
   
-  )
+  
 
 }
 
