@@ -32,7 +32,7 @@ export default function App() {
   
   return (
 
- <NewListingScreen name="Camera"/>
+ <NewListingScreen name="category" placeholder="Select a category"/>
     
   );
 

@@ -16,7 +16,7 @@ const validationSchema = Yup.object().shape({ // Yup form validation
     description: Yup.string().label("Description")
 })
 
-const NewListingScreen = ({ name }) => {
+const NewListingScreen = ({ name,placeholder }) => {
 
   return (
     
@@ -30,7 +30,6 @@ const NewListingScreen = ({ name }) => {
                 <>
                 <View style={styles.container} >
                 <AppTextInput 
-
                 onBlur={() => setFieldTouched('title')}
                 onChangeText={handleChange("title")}
                 placeholder="Title"/>
@@ -43,13 +42,13 @@ const NewListingScreen = ({ name }) => {
                 { touched.price && <Text style={{color:'red'}}>{errors.price}</Text>}
                 <AppPicker
                 items={categories}
-                placeholder="Category"
+                placeholder={placeholder}
                 selectedItem={values[name]}
                 onSelectItem={(item) => {
                     setFieldValue(name,item);
                   }}
                 />
-                { touched.category && <Text style={{color:'red'}}>{errors.category}</Text>}
+                { touched[name] && <Text style={{color:'red'}}>{errors[name]}</Text>}
                 <AppTextInput 
                  onBlur={() => setFieldTouched('description')}
                  onChangeText={handleChange('description')}
