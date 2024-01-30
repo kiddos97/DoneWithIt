@@ -1,9 +1,9 @@
 import React from 'react'
 import { Image, View,StyleSheet,Text, FlatList } from 'react-native'
-import ListItem from '../../../components/ListItem'
-import Icon from '../../../components/Icon';
-import ListitemSeparator from '../../../components/ListitemSeparator';
-import { menuItems} from '../../../components/MenuItems';
+import ListItem from '../../../components/List/ListItem'
+import Icon from '../../../components/Icon/Icon';
+import ListitemSeparator from '../../../components/List/ListitemSeparator';
+import { menuItems} from '../../../components/Menu/MenuItems';
 
 
 

@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
 import { FlatList, SafeAreaView, StyleSheet, Platform, StatusBar,View ,Text,TouchableOp, TouchableOpacity} from 'react-native'
-import ListItem from '../../../components/ListItem'
+import ListItem from '../../../components/List/ListItem'
 
-import ListItemDelete from '../../../components/ListItemDelete'
+import ListItemDelete from '../../../components/List/ListItemDelete'
 
-import ListitemSeparator from '../../../components/ListitemSeparator'
+import ListitemSeparator from '../../../components/List/ListitemSeparator'
 
-import { message } from '../../../components/Message';
+import { message } from '../../../components/Menu/Message';
 
 
 

@@ -1,8 +1,8 @@
 import React, { startTransition, useState } from 'react'
 
 import { Image, SafeAreaView, StyleSheet, View, Text } from 'react-native'
-import AppTextInput from '../../../components/AppTextInput'
-import AppButton from '../../../components/AppButton'
+import AppTextInput from '../../../components/App/AppTextInput'
+import AppButton from '../../../components/App/AppButton'
 
 import { Formik } from 'formik'
 import * as Yup from 'yup';

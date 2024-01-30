@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import {  View, StyleSheet,Text, TouchableWithoutFeedback, Modal, Button, SafeAreaView, FlatList } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import color from "../config/colors";
-import PickerItem from './PickerItem';
+import color from "../../config/colors";
+import PickerItem from '../Menu/PickerItem';
 
 const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder}) => {
 

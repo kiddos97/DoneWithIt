@@ -14,10 +14,10 @@ import LoginScreen from './app/assets/screens/LoginScreen';
 
 
 {/** Components */}
-import Card from './components/Card';
+import Card from './components/Card/Card';
 import ListingDetails from './app/assets/screens/ListingDetails';
-import AppTextInput from './components/AppTextInput';
-import AppPicker from './components/AppPicker';
+import AppTextInput from './components/App/AppTextInput';
+import AppPicker from './components/App/AppPicker';
 
 
 

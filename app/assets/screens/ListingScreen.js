@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
-import Card from '../../../components/Card'; // Import or define the Card component
-import ListitemSeparator from '../../../components/ListitemSeparator';
+import Card from '../../../components/Card/Card'; // Import or define the Card component
+import ListitemSeparator from '../../../components/List/ListitemSeparator';
 
 const listings = [
   {
