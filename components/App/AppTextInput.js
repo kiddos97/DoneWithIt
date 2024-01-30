@@ -14,11 +14,11 @@ const AppTextInput = ({ icon, ...otherprops }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'lightgrey',
+        backgroundColor:color.light,
         borderRadius: 25,
         flexDirection:'row',
         width:'100%',
-        padding: 10,
+        padding: 15,
         marginVertical: 10
     },
     icon:{
