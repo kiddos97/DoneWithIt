@@ -34,14 +34,14 @@ const RegisterScreen = () => {
                  onBlur={() => setFieldTouched("Name")}
                  onChangedText={handleChange('Name')}
                  />
-                 <Text style={styles.errormessage}>{errors.name}</Text>
+                 {touched.name && <Text style={styles.errormessage}>{errors.name}</Text>}
                   <AppTextInput
                     icon="email"
                     placeholder="Email"
                     onBlur={() => setFieldTouched("email")}
                     onChangedText={handleChange('Email')}
                  />
-                   <Text style={styles.errormessage}>{errors.email}</Text>
+                   {touched.email && <Text style={styles.errormessage}>{errors.email}</Text>}
                  <AppTextInput
                  icon="lock"
                  placeholder="Password"
@@ -50,7 +50,7 @@ const RegisterScreen = () => {
                  onBlur={() => setFieldTouched("password")}
                  onChangedText={handleChange('password')}
                  />
-                   <Text style={styles.errormessage}>{errors.password}</Text>
+                   { touched.password && <Text style={styles.errormessage}>{errors.password}</Text>}
                  </View>
                  <AppButton title="Register" onPress={handleSubmit}/>
                 </>
