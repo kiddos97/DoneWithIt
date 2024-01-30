@@ -46,6 +46,7 @@ const LoginScreen = () => {
                           autoCorrect={false}
                           icon='lock'
                           keyboardType="email-address"
+                          onBlur={() => setFieldTouched("password")}
                           onChangeText ={ handleChange('password') }
                           placeholder="Password"
                           secureTextEntry

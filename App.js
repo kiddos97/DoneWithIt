@@ -18,6 +18,7 @@ import Card from './components/Card/Card';
 import ListingDetails from './app/assets/screens/ListingDetails';
 import AppTextInput from './components/App/AppTextInput';
 import AppPicker from './components/App/AppPicker';
+import RegisterScreen from './app/assets/screens/RegisterScreen';
 
 
 
@@ -30,7 +31,7 @@ export default function App() {
   
   return (
 
-   <LoginScreen/>
+  <RegisterScreen/>
     
   );
 
