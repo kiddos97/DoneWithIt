@@ -17,7 +17,7 @@ const validationSchema = Yup.object().shape({ // Yup form validation
     description: Yup.string().label("Description")
 })
 
-const NewListingScreen = ({ name,placeholder, PickerItemComponent }) => {
+const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }) => {
 
   return (
     
@@ -45,6 +45,7 @@ const NewListingScreen = ({ name,placeholder, PickerItemComponent }) => {
                 <AppPicker
                 width="50%"
                 items={categories}
+                numOfColumns={numOfColumns}
                 PickerItemComponent={PickerItemComponent}
                 placeholder={placeholder}
                 selectedItem={values[name]}

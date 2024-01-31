@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import color from "../../config/colors";
 import PickerItem from '../Menu/PickerItem';
 
-const AppPicker = ({ icon,items, onSelectItem,PickerItemComponent =PickerItem, selectedItem, placeholder, width="100%"}) => {
+const AppPicker = ({ icon,items, onSelectItem,PickerItemComponent =PickerItem,numOfColumns, selectedItem, placeholder, width="100%"}) => {
 
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -36,6 +36,7 @@ const AppPicker = ({ icon,items, onSelectItem,PickerItemComponent =PickerItem, s
         <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
+            numColumns={numOfColumns}
             renderItem={({ item }) => 
                 <PickerItemComponent 
                 item={item}

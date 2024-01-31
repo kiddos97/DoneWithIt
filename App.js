@@ -30,7 +30,7 @@ export default function App() {
   
   return (
 
-         <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem}/>
+         <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem} numOfColumns={3}/>
   )
 }
 
