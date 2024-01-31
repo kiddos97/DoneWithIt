@@ -7,6 +7,7 @@ import { categories } from '../../../components/Menu/CategoriesList'
 
 import { Formik } from 'formik'
 import * as Yup from 'yup';
+import CategoryPickerItem from '../../../components/Menu/CategoryPickerItem'
 
 const validationSchema = Yup.object().shape({ // Yup form validation
 
@@ -16,7 +17,7 @@ const validationSchema = Yup.object().shape({ // Yup form validation
     description: Yup.string().label("Description")
 })
 
-const NewListingScreen = ({ name,placeholder }) => {
+const NewListingScreen = ({ name,placeholder, PickerItemComponent }) => {
 
   return (
     
@@ -44,6 +45,7 @@ const NewListingScreen = ({ name,placeholder }) => {
                 <AppPicker
                 width="50%"
                 items={categories}
+                PickerItemComponent={PickerItemComponent}
                 placeholder={placeholder}
                 selectedItem={values[name]}
                 onSelectItem={(item) => {

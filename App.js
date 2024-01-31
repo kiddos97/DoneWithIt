@@ -20,6 +20,7 @@ import AppTextInput from './components/App/AppTextInput';
 import AppPicker from './components/App/AppPicker';
 import RegisterScreen from './app/assets/screens/RegisterScreen';
 import NewListingScreen from './app/assets/screens/NewListingScreen';
+import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
 
 
@@ -29,7 +30,7 @@ export default function App() {
   
   return (
 
-         <NewListingScreen name="category" placeholder='Select a Category'/>
+         <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem}/>
   )
 }
 

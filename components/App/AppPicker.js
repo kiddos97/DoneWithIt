@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import color from "../../config/colors";
 import PickerItem from '../Menu/PickerItem';
 
-const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder, width="100%"}) => {
+const AppPicker = ({ icon,items, onSelectItem,PickerItemComponent =PickerItem, selectedItem, placeholder, width="100%"}) => {
 
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -13,7 +13,7 @@ const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder, width=
   return (
     <>
   <TouchableWithoutFeedback onPress={handleModal}>
-      <View style={[styles.container, { width} ]}>
+      <View style={[styles.container, { width } ]}>
         {icon &&
         <MaterialCommunityIcons
         name={icon}
@@ -37,7 +37,9 @@ const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder, width=
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => 
-                <PickerItem label={item.label}
+                <PickerItemComponent 
+                item={item}
+                label={item.label}
                 onPress={() => {
                     setModalVisible(false)
                     onSelectItem(item)
