@@ -25,7 +25,7 @@ const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }
     
     <SafeAreaView>
         <Formik
-          initialValues={{title:'',price:'',description:'',category:null, image:[]}}
+          initialValues={{title:'',price:'',description:'',category:null, images:[]}}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
