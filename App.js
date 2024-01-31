@@ -23,7 +23,7 @@ import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { NavigationContainer } from '@react-navigation/native';
 
 import ImageInputList from './components/ImageInput/ImageInputList';
 
@@ -34,21 +34,32 @@ const Tweets = () => {
  
 }
 
-const TweeDetails = () => {
+const TweetDetails = () => {
   <View> 
     <Text>Tweets Details</Text>
       </View>
 }
 
+const Stack = createNativeStackNavigator();
+
+const StackNavigator = () => {
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets}/>
+    <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+  </Stack.Navigator>
+}
+
 export default function App() {
   console.log('app executed')
 
-const 
+
   return (
-    <View>
+   <SafeAreaView>
+     <NavigationContainer>
+      <StackNavigator/>
+     </NavigationContainer>
      
-    </View>
-   
+   </SafeAreaView>
   )
 }
 
