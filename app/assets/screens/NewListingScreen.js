@@ -1,4 +1,4 @@
-import React,{ useState}  from 'react'
+import React,{ useEffect, useState}  from 'react'
 import { SafeAreaView, View, StyleSheet,Text } from 'react-native'
 import AppTextInput from '../../../components/App/AppTextInput'
 import AppPicker from '../../../components/App/AppPicker'
@@ -7,6 +7,7 @@ import { categories } from '../../../components/Menu/CategoriesList'
 
 import { Formik } from 'formik'
 import * as Yup from 'yup';
+import * as Location from 'expo-location'
 import CategoryPickerItem from '../../../components/Menu/CategoryPickerItem'
 import FormImagePicker from '../../../components/Form/FormImagePicker'
 
@@ -21,12 +22,26 @@ const validationSchema = Yup.object().shape({ // Yup form validation
 
 const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }) => {
 
+  const [location, setLocation] = useState();
+
+  const getLocation = async () => {
+    const { granted } = await Location.requestForegroundPermissionsAsync();
+    if(!granted) return;
+
+    const { coords:{latitude, longitude} } = await Location.getLastKnownPositionAsync()
+    setLocation({latitude,longitude})
+
+  }
+  useEffect(() => {
+    getLocation();
+
+  }, [])
   return (
     
     <SafeAreaView>
         <Formik
           initialValues={{title:'',price:'',description:'',category:null, images:[]}}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => console.log(location)}
           validationSchema={validationSchema}
         >
              {({ handleChange, handleSubmit, errors, setFieldTouched, touched, setFieldValue,values}) => (
