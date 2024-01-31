@@ -35,12 +35,14 @@ const NewListingScreen = ({ name,placeholder }) => {
                 placeholder="Title"/>
                 { touched.title && <Text style={{color:'red'}}>{errors.title}</Text>}
                 <AppTextInput 
+                width={120}
                 keyboardType="numeric"
                 onBlur={() => setFieldTouched('price')}
                 onChangeText={handleChange('price')}
                 placeholder="Price"/>
                 { touched.price && <Text style={{color:'red'}}>{errors.price}</Text>}
                 <AppPicker
+                width="50%"
                 items={categories}
                 placeholder={placeholder}
                 selectedItem={values[name]}
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
     container:{
         padding:10,
         paddingTop:30
-    }
+    },
+
 })
 export default NewListingScreen

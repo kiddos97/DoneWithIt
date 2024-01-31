@@ -55,7 +55,13 @@ const MessageScreen = () => {
         refreshing={refreshing} //pull to refresh
         onRefresh={() => {setMessages([  {
           id: 2, title: 'Emmanuel Imarhiagbe', description: 'Hey how is it going',image:require('../person.jpg')
-      },])}}
+      },
+      {
+        id: 1, title: 'Isa Kuhn', description: 'Are you home, please tell me you are home',image:require('../person1.jpg')
+    },
+    
+    
+    ])}}
       />
     </SafeAreaView>
   );

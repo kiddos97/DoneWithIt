@@ -4,7 +4,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import color from "../../config/colors";
 import PickerItem from '../Menu/PickerItem';
 
-const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder}) => {
+const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder, width="100%"}) => {
 
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -13,7 +13,7 @@ const AppPicker = ({ icon,items, onSelectItem, selectedItem, placeholder}) => {
   return (
     <>
   <TouchableWithoutFeedback onPress={handleModal}>
-      <View style={styles.container}>
+      <View style={[styles.container, { width} ]}>
         {icon &&
         <MaterialCommunityIcons
         name={icon}
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
         backgroundColor:color.light,
         borderRadius: 25,
         flexDirection:'row',
-        width:'100%',
         padding: 10,
         marginVertical: 10
     },

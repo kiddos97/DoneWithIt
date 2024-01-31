@@ -26,20 +26,11 @@ import NewListingScreen from './app/assets/screens/NewListingScreen';
 
 export default function App() {
   console.log('app executed')
-
-
-
   
   return (
 
-    <MessageScreen/>
-
-    
-  );
-
-  
-  
-
+         <NewListingScreen name="category" placeholder='Select a Category'/>
+  )
 }
 
 const styles = StyleSheet.create({
