@@ -22,9 +22,20 @@ import RegisterScreen from './app/assets/screens/RegisterScreen';
 import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
 
+
+const Link = () => {
+
+  const navigation = useNavigation();
+  return ( <Button
+    title='Click'
+    onPress={() => navigation.navigate('TweetDetails') }
+    />)
+ 
+}
 const TweetDetails = () => {
   return (
     <View>
@@ -35,14 +46,14 @@ const TweetDetails = () => {
 const Tweets = ({ navigation}) => {
   return (
   <View style={styles.container}> 
-    <Text>Tweets</Text>
-    <Button 
-    title='View Tweet'
-    onPress={() => navigation.navigate("TweetDetails")}
-    />
+    <Text>
+      Tweets
+    </Text>
+        <Link/>
       </View>
   )
 }
+
 
 
 
@@ -57,6 +68,24 @@ const StackNavigator = () => (
 
 )
 
+
+const Account = () => {
+  return ( 
+  <View>
+    <Text>Account</Text>
+  </View>)
+   
+}
+
+const Tab = createBottomTabNavigator();
+
+const TabNavigator = () => {
+  <Tab.Navigator>
+    <Tab.Screen name="Feed" component={Tweets}/>
+    <Tab.Screen name="Account" component={Account}/>
+  </Tab.Navigator>
+}
+
 export default function App() {
   console.log('app executed')
 
@@ -65,7 +94,7 @@ export default function App() {
   
  
        <NavigationContainer >
-          <StackNavigator/>
+          <TabNavigator/>
        </NavigationContainer>
 
 
