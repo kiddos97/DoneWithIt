@@ -20,7 +20,7 @@ const ListItem = ({ title, subTitle, image, IconComponent,onPress, renderRightAc
         </View>
          {image && <Image style={styles.image} source={image} />}
          <View style={styles.detailsContainer}>
-             <Text style={styles.title}>{title}</Text>
+             <Text numberOfLines={1} style={styles.title}>{title}</Text>
              { subTitle && <Text  style={styles.subTitle} >{subTitle}</Text>}
          </View>
          <MaterialCommunityIcons color={colors.medium} name="chevron-right" size={25}/>
