@@ -1,6 +1,6 @@
 export const message =[
     {
-      id: 1, title: 'Isa Kuhn', description: 'Are you home, please tell me you are home',image:require('../../app/assets/person.jpg')
+      id: 1, title: 'Isa Kuhn', description: 'Are you home, please tell me you are home',image:require('../../app/assets/person1.jpg')
   },
   
   {
