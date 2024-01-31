@@ -51,11 +51,10 @@ const MessageScreen = () => {
             )}
           />
           
-        )}
-        ItemSeparatorComponent={ListitemSeparator} // Make sure ListitemSeparator is defined or import correctly
+        )} // Make sure ListitemSeparator is defined or import correctly
         refreshing={refreshing} //pull to refresh
         onRefresh={() => {setMessages([  {
-          id: 2, title: 't2', description: 'D2',image:require('../person.jpg')
+          id: 2, title: 'Emmanuel Imarhiagbe', description: 'Hey how is it going',image:require('../person.jpg')
       },])}}
       />
     </SafeAreaView>

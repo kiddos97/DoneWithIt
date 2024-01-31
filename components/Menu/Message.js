@@ -1,10 +1,10 @@
 export const message =[
     {
-      id: 1, title: 't1', description: 'D1',image:require('../../app/assets/person.jpg')
+      id: 1, title: 'Isa Kuhn', description: 'Are you home, please tell me you are home',image:require('../../app/assets/person.jpg')
   },
   
   {
-      id: 2, title: 't2', description: 'D2',image:require('../../app/assets/person.jpg')
+      id: 2, title: 'Emmanuel Imarhiagbe', description: 'Hey how is it going',image:require('../../app/assets/person.jpg')
   },
   
   ]
