@@ -27,20 +27,7 @@ const Imageinput = ({ imageUri, onChangeImage }) => {
         }
       }
       
-    const selectImage = async () => {
-        try {
-          const result  = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.All,
-            quality: 1,
-          });
-          if(!result.canceled){
-            onChangeImage(result.assets[0].uri)
-          }
-        } catch (error) {
-          console.log('error: ', error)
-        }
-        
-      }
+ 
     const handlePress = () => {
         if(!imageUri){
             selectImage();
@@ -50,7 +37,21 @@ const Imageinput = ({ imageUri, onChangeImage }) => {
                 { text:'No'}])
         }
     }
-
+    const selectImage = async () => {
+        try {
+          const result  = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            quality: 0.5,
+          });
+          if(!result.canceled){
+            onChangeImage(result.assets[0].uri)
+          }
+        } catch (error) {
+          console.log('error: ', error)
+        }
+        
+      }
+      
 
   return (
     <TouchableWithoutFeedback onPress={handlePress}>

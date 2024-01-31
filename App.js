@@ -33,10 +33,10 @@ export default function App() {
 
    const [imageUris, setImageUris] = useState();
 
-   const handleAdd = ({ uri }) => {
+   const handleAdd = ( uri ) => {
     setImageUris([...imageUris, uri])
    }
-   const handleRemove = ({ uri }) => {
+   const handleRemove = ( uri ) => {
     setImageUris(imageUris.filter((imageUri) => imageUri !== uri))
    }
 
@@ -45,8 +45,8 @@ export default function App() {
        <SafeAreaView style={styles.container}>
         <ImageInputList 
         imageUri={imageUris} 
-       onAddImage={handleAdd}
-       onRemoveImage={handleRemove}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
         />
        </SafeAreaView>
   )
