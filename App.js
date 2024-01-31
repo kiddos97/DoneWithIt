@@ -22,19 +22,33 @@ import RegisterScreen from './app/assets/screens/RegisterScreen';
 import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import ImageInputList from './components/ImageInput/ImageInputList';
 
+const Tweets = () => {
+  <View> 
+    <Text>Tweets</Text>
+      </View>
+ 
+}
 
+const TweeDetails = () => {
+  <View> 
+    <Text>Tweets Details</Text>
+      </View>
+}
 
 export default function App() {
   console.log('app executed')
 
-
+const 
   return (
-
-    <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem} numOfColumns={3}/>
+    <View>
+     
+    </View>
+   
   )
 }
 
