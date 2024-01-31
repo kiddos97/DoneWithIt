@@ -154,3 +154,6 @@ const categories = [
     const [password, setPassword] = [] = useState();
 
 
+     <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem} numOfColumns={3}/>
+
+
