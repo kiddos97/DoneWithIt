@@ -31,7 +31,7 @@ import ImageInputList from './components/ImageInput/ImageInputList';
 export default function App() {
   console.log('app executed')
 
-   const [imageUris, setImageUris] = useState();
+   const [imageUris, setImageUris] = useState([]);
 
    const handleAdd = ( uri ) => {
     setImageUris([...imageUris, uri])
@@ -44,7 +44,7 @@ export default function App() {
 
        <SafeAreaView style={styles.container}>
         <ImageInputList 
-        imageUri={imageUris} 
+        imageUris={imageUris} 
         onAddImage={handleAdd}
         onRemoveImage={handleRemove}
         />
