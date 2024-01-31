@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableWithoutFeedback, Button,Alert, Platform, Dimensions, TextInput} from 'react-native'
-import { useState} from 'react'
+import { useEffect, useState} from 'react'
 import { useDeviceOrientation } from "@react-native-community/hooks"
 
 import WelcomeScreen from './app/assets/screens/WelcomeScreen';
@@ -23,14 +23,29 @@ import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
 
+import * as ImagePicker from 'expo-image-picker'
+
 
 
 export default function App() {
   console.log('app executed')
+
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
+    if(!granted){
+      alert('You need to enable permission to access library')
+    }
+  }
   
+
+  useEffect(() => {
+
+    requestPermission();
+  
+  },[])
   return (
 
-         <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem} numOfColumns={3}/>
+       <View></View>
   )
 }
 
