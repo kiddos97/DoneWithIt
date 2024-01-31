@@ -8,13 +8,15 @@ import { categories } from '../../../components/Menu/CategoriesList'
 import { Formik } from 'formik'
 import * as Yup from 'yup';
 import CategoryPickerItem from '../../../components/Menu/CategoryPickerItem'
+import FormImagePicker from '../../../components/Form/FormImagePicker'
 
 const validationSchema = Yup.object().shape({ // Yup form validation
 
     title: Yup.string().required().min(1).label("Title"),
     price: Yup.number().required().min(1).max(10000).label("Price"),
     category: Yup.object().required().nullable().label('Category'),
-    description: Yup.string().label("Description")
+    description: Yup.string().label("Description"),
+    images: Yup.array().min(1,"Please select at least 1 image")
 })
 
 const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }) => {
@@ -23,13 +25,19 @@ const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }
     
     <SafeAreaView>
         <Formik
-          initialValues={{title:'',price:'',description:'',category:null}}
+          initialValues={{title:'',price:'',description:'',category:null, image:[]}}
           onSubmit={(values) => console.log(values)}
           validationSchema={validationSchema}
         >
              {({ handleChange, handleSubmit, errors, setFieldTouched, touched, setFieldValue,values}) => (
                 <>
                 <View style={styles.container} >
+                  <FormImagePicker
+                  name="images"
+                  values={values}
+                  setFieldValue={setFieldValue}
+                  touched={touched}
+                  errors={errors}/>
                 <AppTextInput 
                 onBlur={() => setFieldTouched('title')}
                 onChangeText={handleChange("title")}

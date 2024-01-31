@@ -31,24 +31,10 @@ import ImageInputList from './components/ImageInput/ImageInputList';
 export default function App() {
   console.log('app executed')
 
-   const [imageUris, setImageUris] = useState([]);
-
-   const handleAdd = ( uri ) => {
-    setImageUris([...imageUris, uri])
-   }
-   const handleRemove = ( uri ) => {
-    setImageUris(imageUris.filter((imageUri) => imageUri !== uri))
-   }
 
   return (
 
-       <SafeAreaView style={styles.container}>
-        <ImageInputList 
-        imageUris={imageUris} 
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-        />
-       </SafeAreaView>
+    <NewListingScreen name="category" placeholder='Select a Category' PickerItemComponent={CategoryPickerItem} numOfColumns={3}/>
   )
 }
 
