@@ -24,13 +24,17 @@ import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
 
 import * as ImagePicker from 'expo-image-picker'
+import * as Permissions from "expo-permissions"
 
 
 
 export default function App() {
   console.log('app executed')
 
+  const [imageUri, setImageUri] = useState();
+
   const requestPermission = async () => {
+    await Permissions.askAsync(Permissions.CAMERA, Permissions.LOCATION_BACKGROUND)
     const { granted } = await ImagePicker.requestCameraPermissionsAsync();
     if(!granted){
       alert('You need to enable permission to access library')
@@ -43,15 +47,40 @@ export default function App() {
     requestPermission();
   
   },[])
+
+
+  const selectImage = async () => {
+    try {
+      const result  = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+      console.log(result);
+      if(!result.canceled){
+        setImageUri(result.assets[0].uri)
+      }
+    } catch (error) {
+      console.Log('error: ', error)
+    }
+    
+  }
   return (
 
-       <View></View>
+       <SafeAreaView style={styles.container}>
+        <Button title="Select Image" onPress={selectImage}/>
+        {imageUri && <Image source={{uri: imageUri }} style={{width:200, height:200}}/>}
+       </SafeAreaView>
   )
 }
 
+
 const styles = StyleSheet.create({
   container:{
-    padding:20
+
+   
   }
+
 })
 
