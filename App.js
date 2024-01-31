@@ -22,37 +22,51 @@ import RegisterScreen from './app/assets/screens/RegisterScreen';
 import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-
-import ImageInputList from './components/ImageInput/ImageInputList';
-
-const Tweets = () => {
-
-  return (
-  <View> 
-    <Text>Tweets</Text>
-      </View>
-  )
- 
-}
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const TweetDetails = () => {
   return (
-  <View> 
-    <Text>Tweets Details</Text>
-      </View>
-  )
+    <View>
+      <Text>Tweet Details</Text>
+    </View>
+  );
+};
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('TweetDetails')}
+      />
+    </View>
+  );
 }
+// const Tweets = ({ navigation}) => {
+//   return (
+//   <View> 
+//     <Text>Tweets</Text>
+//     <Button 
+//     title='View Tweet'
+//     onPress={() => navigation.navigate("TweetDetails")}
+//     />
+//       </View>
+//   )
+// }
+
+
 
 const Stack = createNativeStackNavigator();
 
-const StackNavigator = () => {
-  <Stack.Navigator>
-    <Stack.Screen name="Tweets" component={Tweets}/>
-    <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+const StackNavigator = () => (
+
+  <Stack.Navigator initialRouteName='Tweets'>
+    <Stack.Screen name="Tweet" component={TweetDetails} />
+    <Stack.Screen name="Tweets" component={HomeScreen} />
   </Stack.Navigator>
-}
+
+)
 
 export default function App() {
   console.log('app executed')
@@ -60,11 +74,11 @@ export default function App() {
 
   return (
   
-     <SafeAreaView>
+ 
        <NavigationContainer>
-        <StackNavigator/>
+          <StackNavigator/>
        </NavigationContainer>
-     </SafeAreaView>
+
 
   )
 }
