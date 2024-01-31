@@ -2,6 +2,8 @@ import React from 'react'
 import { View, StyleSheet, Image,Text, TouchableHighlight } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import colors from '../../config/colors';
 
 const ListItem = ({ title, subTitle, image, IconComponent,onPress, renderRightActions,renderLeftActions}) => {
 
@@ -21,6 +23,7 @@ const ListItem = ({ title, subTitle, image, IconComponent,onPress, renderRightAc
              <Text style={styles.title}>{title}</Text>
              { subTitle && <Text  style={styles.subTitle} >{subTitle}</Text>}
          </View>
+         <MaterialCommunityIcons color={colors.medium} name="chevron-right" size={25}/>
         </View>
     </TouchableHighlight>
     </Swipeable>
@@ -34,9 +37,11 @@ const ListItem = ({ title, subTitle, image, IconComponent,onPress, renderRightAc
 const styles = StyleSheet.create({
     container:{
         flexDirection:'row',
-        padding: 15
+        padding: 15,
+        alignItems:'center'
     },
     detailsContainer:{
+        flex:1,
         marginLeft:10,
         justifyContent:'center'
     },
