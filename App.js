@@ -32,28 +32,17 @@ const TweetDetails = () => {
     </View>
   );
 };
-function HomeScreen({ navigation }) {
+const Tweets = ({ navigation}) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('TweetDetails')}
-      />
-    </View>
-  );
+  <View style={styles.container}> 
+    <Text>Tweets</Text>
+    <Button 
+    title='View Tweet'
+    onPress={() => navigation.navigate("TweetDetails")}
+    />
+      </View>
+  )
 }
-// const Tweets = ({ navigation}) => {
-//   return (
-//   <View> 
-//     <Text>Tweets</Text>
-//     <Button 
-//     title='View Tweet'
-//     onPress={() => navigation.navigate("TweetDetails")}
-//     />
-//       </View>
-//   )
-// }
 
 
 
@@ -61,9 +50,9 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => (
 
-  <Stack.Navigator initialRouteName='Tweets'>
-    <Stack.Screen name="Tweet" component={TweetDetails} />
-    <Stack.Screen name="Tweets" component={HomeScreen} />
+  <Stack.Navigator initialRouteName='Tweet'>
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+    <Stack.Screen name="Tweet" component={Tweets} />
   </Stack.Navigator>
 
 )
@@ -75,7 +64,7 @@ export default function App() {
   return (
   
  
-       <NavigationContainer>
+       <NavigationContainer >
           <StackNavigator/>
        </NavigationContainer>
 
@@ -86,7 +75,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container:{
-   alignItems:'center'
+   alignItems:'center',
+   justifyContent:'center',
+   flex:1
   }
 
 })
