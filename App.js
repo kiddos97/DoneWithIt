@@ -23,54 +23,31 @@ import NewListingScreen from './app/assets/screens/NewListingScreen';
 import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 
 
-import * as ImagePicker from 'expo-image-picker'
-import * as Permissions from "expo-permissions"
+
+import ImageInputList from './components/ImageInput/ImageInputList';
 
 
 
 export default function App() {
   console.log('app executed')
 
-  const [imageUri, setImageUri] = useState();
+   const [imageUris, setImageUris] = useState();
 
-  const requestPermission = async () => {
-    await Permissions.askAsync(Permissions.CAMERA, Permissions.LOCATION_BACKGROUND)
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if(!granted){
-      alert('You need to enable permission to access library')
-    }
-  }
-  
+   const handleAdd = ({ uri }) => {
+    setImageUris([...imageUris, uri])
+   }
+   const handleRemove = ({ uri }) => {
+    setImageUris(imageUris.filter((imageUri) => imageUri !== uri))
+   }
 
-  useEffect(() => {
-
-    requestPermission();
-  
-  },[])
-
-
-  const selectImage = async () => {
-    try {
-      const result  = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-      console.log(result);
-      if(!result.canceled){
-        setImageUri(result.assets[0].uri)
-      }
-    } catch (error) {
-      console.Log('error: ', error)
-    }
-    
-  }
   return (
 
        <SafeAreaView style={styles.container}>
-        <Button title="Select Image" onPress={selectImage}/>
-        {imageUri && <Image source={{uri: imageUri }} style={{width:200, height:200}}/>}
+        <ImageInputList 
+        imageUri={imageUris} 
+       onAddImage={handleAdd}
+       onRemoveImage={handleRemove}
+        />
        </SafeAreaView>
   )
 }
