@@ -28,16 +28,21 @@ import { NavigationContainer } from '@react-navigation/native';
 import ImageInputList from './components/ImageInput/ImageInputList';
 
 const Tweets = () => {
+
+  return (
   <View> 
     <Text>Tweets</Text>
       </View>
+  )
  
 }
 
 const TweetDetails = () => {
+  return (
   <View> 
     <Text>Tweets Details</Text>
       </View>
+  )
 }
 
 const Stack = createNativeStackNavigator();
@@ -54,12 +59,13 @@ export default function App() {
 
 
   return (
-   <SafeAreaView>
-     <NavigationContainer>
-      <StackNavigator/>
-     </NavigationContainer>
-     
-   </SafeAreaView>
+  
+     <SafeAreaView>
+       <NavigationContainer>
+        <StackNavigator/>
+       </NavigationContainer>
+     </SafeAreaView>
+
   )
 }
 
