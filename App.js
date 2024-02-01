@@ -26,6 +26,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
 import AuthNavigator from './components/App/Navigation/AuthNavigator';
+import ListingNavigator from './app/assets/Navigation/ListingNavigator';
 
 
 
@@ -37,7 +38,7 @@ export default function App() {
   return (
   
  <NavigationContainer>
-  <AuthNavigator/>
+  <ListingNavigator/>
  </NavigationContainer>
 
 
