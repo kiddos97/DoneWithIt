@@ -25,66 +25,10 @@ import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
-
-
-const Link = () => {
-
-  const navigation = useNavigation();
-  return ( <Button
-    title='Click'
-    onPress={() => navigation.navigate('TweetDetails') }
-    />)
- 
-}
-const TweetDetails = () => {
-  return (
-    <View>
-      <Text>Tweet Details</Text>
-    </View>
-  );
-};
-const Tweets = ({ navigation}) => {
-  return (
-  <View style={styles.container}> 
-    <Text>
-      Tweets
-    </Text>
-        <Link/>
-      </View>
-  )
-}
+import AuthNavigator from './components/Navigation/AuthNavigator';
 
 
 
-
-const Stack = createNativeStackNavigator();
-
-const StackNavigator = () => (
-
-  <Stack.Navigator initialRouteName='Tweet'>
-    <Stack.Screen name="TweetDetails" component={TweetDetails} />
-    <Stack.Screen name="Tweet" component={Tweets} />
-  </Stack.Navigator>
-
-)
-
-
-const Account = () => {
-  return ( 
-  <View>
-    <Text>Account</Text>
-  </View>)
-   
-}
-
-const Tab = createBottomTabNavigator();
-
-const TabNavigator = () => {
-  <Tab.Navigator>
-    <Tab.Screen name="Feed" component={Tweets}/>
-    <Tab.Screen name="Account" component={Account}/>
-  </Tab.Navigator>
-}
 
 export default function App() {
   console.log('app executed')
@@ -92,10 +36,9 @@ export default function App() {
 
   return (
   
- 
-       <NavigationContainer >
-          <TabNavigator/>
-       </NavigationContainer>
+ <NavigationContainer>
+  <AuthNavigator/>
+ </NavigationContainer>
 
 
   )

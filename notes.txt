@@ -302,3 +302,66 @@ const styles = StyleSheet.create({
 
 
 
+const Link = () => {
+
+  const navigation = useNavigation();
+  return ( <Button
+    title='Click'
+    onPress={() => navigation.navigate('TweetDetails') }
+    />)
+ 
+}
+const TweetDetails = () => {
+  return (
+    <View>
+      <Text>Tweet Details</Text>
+    </View>
+  );
+};
+const Tweets = ({ navigation}) => {
+  return (
+  <View style={styles.container}> 
+    <Text>
+      Tweets
+    </Text>
+        <Link/>
+      </View>
+  )
+}
+
+
+
+
+const Stack = createNativeStackNavigator();
+
+const StackNavigator = () => (
+
+  <Stack.Navigator>
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+    <Stack.Screen name="Tweet" component={Tweets} />
+  </Stack.Navigator>
+
+)
+
+
+const Account = () => {
+  return ( 
+  <View>
+    <Text>Account</Text>
+  </View>)
+   
+}
+
+const Tab = createBottomTabNavigator();
+
+const TabNavigator = () => (
+  <Tab.Navigator initialRouteName="Feed">
+    <Tab.Screen name="Feed" component={StackNavigator}/>
+    <Tab.Screen name="Account" component={Account}/>
+  </Tab.Navigator>
+)
+
+
+
+
+

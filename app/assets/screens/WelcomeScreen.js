@@ -1,9 +1,10 @@
 import { Image, ImageBackground, StyleSheet, View, Text, TouchableOpacity } from "react-native"
 
 
-const WelcomeScreen = () => {
+
+const WelcomeScreen = ({ navigation }) => {
   const handleRegister = () => console.log('register button pressed')
-  const handleLogin = () => console.log('login button pressed')
+  
   return (
     <ImageBackground
       style={styles.background}
@@ -16,10 +17,10 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.loginButton}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Register')} style={styles.registerButton}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
       </View>
