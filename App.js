@@ -25,7 +25,7 @@ import CategoryPickerItem from './components/Menu/CategoryPickerItem';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
-import AuthNavigator from './components/Navigation/AuthNavigator';
+import AuthNavigator from './components/App/Navigation/AuthNavigator';
 
 
 
