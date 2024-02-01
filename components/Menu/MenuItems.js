@@ -12,6 +12,9 @@ export const menuItems = [
         icon:{
             name: 'email',
             backgroundColor:"green"
-        }
+        },
+        targetScreen:"Message"
+
+        
     }
 ]

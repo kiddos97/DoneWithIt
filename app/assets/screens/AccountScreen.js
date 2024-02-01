@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, View,StyleSheet,Text, FlatList } from 'react-native'
+import { Image, View,StyleSheet,Text, FlatList, TouchableOpacity } from 'react-native'
 import ListItem from '../../../components/List/ListItem'
 import Icon from '../../../components/Icon/Icon';
 import ListitemSeparator from '../../../components/List/ListitemSeparator';
@@ -7,7 +7,7 @@ import { menuItems} from '../../../components/Menu/MenuItems';
 
 
 
-const AccountScreen = () => {
+const AccountScreen = ({ navigation}) => {
   return (
     <View style={styles.screen}>
           <View>
@@ -18,18 +18,21 @@ const AccountScreen = () => {
                 image={require('../person.jpg')}
                 />
             </View>
-              <View style={styles.container}>
-                <FlatList
-                data={menuItems}
-                keyExtractor={menuItems => menuItems.title}
-                ItemSeparatorComponent={ListitemSeparator}
-                renderItem={({ item }) =>   
-                <ListItem
-                title={item.title}
-                IconComponent={<Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}/>}
-                />}
-                />
-              </View>
+                <View style={styles.container}>
+                  <TouchableOpacity>
+                    <FlatList
+                    data={menuItems}
+                    keyExtractor={menuItems => menuItems.title}
+                    renderItem={({ item }) =>
+                    <ListItem
+                    title={item.title}
+                    IconComponent={<Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor}
+                    /> }
+                    onPress={() => navigation.navigate(item.targetScreen) }
+                    />}
+                    />
+                  </TouchableOpacity>
+                </View>
               <View style={styles.space}></View>
               <View style={styles.container}>
               <ListItem

@@ -5,8 +5,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 
 import ListingScreen from '../screens/ListingScreen';
-import AccountScreen from '../screens/AccountScreen';
 import NewListingScreen from '../screens/NewListingScreen';
+import AccountNavigator from './AccountNavigator';
 const ListingNavigator = () => {
 
     const Tab = createBottomTabNavigator();
@@ -17,8 +17,8 @@ const ListingNavigator = () => {
     <Tab.Navigator initialRouteName="Feed">
     <Tab.Screen name="Feed" component={ListingScreen} options={{headerShown:false}}/>
     <Tab.Screen name="New " component={NewListingScreen}/>
-    <Tab.Screen name="Account" component={AccountScreen}/>
-  </Tab.Navigator>
+    <Tab.Screen name="Account" component={AccountNavigator} options={{headerShown:false}}/>
+    </Tab.Navigator>
   )
 }
 
