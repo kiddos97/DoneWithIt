@@ -16,7 +16,7 @@ const ListingNavigator = () => {
 
     <Tab.Navigator initialRouteName="Feed">
     <Tab.Screen name="Feed" component={ListingScreen} options={{headerShown:false}}/>
-    <Tab.Screen name="New " component={NewListingScreen}/>
+    <Tab.Screen name="New Listing " component={NewListingScreen}/>
     <Tab.Screen name="Account" component={AccountNavigator} options={{headerShown:false}}/>
     </Tab.Navigator>
   )

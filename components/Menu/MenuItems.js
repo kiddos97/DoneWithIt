@@ -1,17 +1,18 @@
+import colors from "../../config/colors"
 export const menuItems = [
 
     {
         title:"My Listings",
         icon:{
             name: 'format-list-bulleted',
-            backgroundColor:"red"
+            backgroundColor:colors.danger
         }
     },
     {
         title:"My Messages",
         icon:{
             name: 'email',
-            backgroundColor:"green"
+            backgroundColor:colors.secondary
         },
         targetScreen:"Message"
 
