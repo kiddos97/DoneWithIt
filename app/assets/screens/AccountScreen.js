@@ -4,6 +4,7 @@ import ListItem from '../../../components/List/ListItem'
 import Icon from '../../../components/Icon/Icon';
 import ListitemSeparator from '../../../components/List/ListitemSeparator';
 import { menuItems} from '../../../components/Menu/MenuItems';
+import colors from '../../../config/colors';
 
 
 
@@ -48,14 +49,14 @@ const AccountScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     Accountcontainer:{
         marginVertical: 70,
-        backgroundColor:'#fff',  
+        backgroundColor:colors.white
     },
     screen:{
-        backgroundColor:'lightgrey',
+        backgroundColor:colors.light,
         flex:1
     },
     container:{
-        backgroundColor:'#fff',
+        backgroundColor:colors.white,
         
         
     },  

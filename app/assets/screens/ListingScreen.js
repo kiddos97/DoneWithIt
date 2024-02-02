@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
 import Card from '../../../components/Card/Card'; // Import or define the Card component
-import ListitemSeparator from '../../../components/List/ListitemSeparator';
+import colors from '../../../config/colors';
 
 const listings = [
   {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     screen:{
         padding: 20,
         paddingTop:40,
-        backgroundColor:'lightgrey',
+        backgroundColor:colors.light,
         flex:1
     }
 })

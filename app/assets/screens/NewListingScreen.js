@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({ // Yup form validation
 
 const NewListingScreen = ({ name,placeholder, PickerItemComponent,numOfColumns }) => {
 
-  const [location, setLocation] = useState();
+  const [location, setLocation] = useState(); // grabbing users location
 
   const getLocation = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
