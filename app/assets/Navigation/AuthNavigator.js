@@ -7,6 +7,7 @@ import LoginScreen from '../assets/screens/LoginScreen';
 import WelcomeScreen from '../assets/screens/WelcomeScreen';
 import RegisterScreen from '../assets/screens/RegisterScreen';
 
+
 const AuthNavigator = () => {
 
     const Stack = createNativeStackNavigator();

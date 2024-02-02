@@ -3,7 +3,7 @@ import { Image, ImageBackground, StyleSheet, View, Text, TouchableOpacity } from
 
 
 const WelcomeScreen = ({ navigation }) => {
-  const handleRegister = () => console.log('register button pressed')
+  
   
   return (
     <ImageBackground
