@@ -7,7 +7,7 @@ import { menuItems} from '../../../components/Menu/MenuItems';
 
 
 
-const AccountScreen = ({ navigation}) => {
+const AccountScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
           <View>
