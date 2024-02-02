@@ -5,10 +5,10 @@ import ListItem from '../../../components/List/ListItem'
 
 const ListingDetails = ({ route }) => {
 
-    const listing = route.params
+    const listing = route.params;
   return (
   <View>
-    <Image style={styles.image} source={listing.image}/>
+    {listing.image && <Image style={styles.image} source={listing.image}/>}
       <View style={styles.detailsContainer}>
           <Text style={styles.title}>{listing.title}</Text>
           <Text style={styles.price}>{'$ ' + listing.price}</Text>
