@@ -1,15 +1,17 @@
 import React from 'react'
-import { View, StyleSheet,Image,Text} from 'react-native'
+import { View, StyleSheet,Image,Text, TouchableOpacity} from 'react-native'
 
-const Card = ({title, subTitle, image}) => {
+const Card = ({title, subTitle, image,onPress}) => {
   return (
-   <View style={styles.card}>
-    <Image style={styles.image} source={image}/>
-    <View style={styles.textContainer}> 
-    <Text style={styles.title}>{title}</Text>
-    <Text style={styles.subTitle}>{subTitle}</Text>
-    </View>
-   </View>
+   <TouchableOpacity onPress={onPress}>
+       <View style={styles.card}>
+        <Image style={styles.image} source={image}/>
+        <View style={styles.textContainer}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subTitle}>{subTitle}</Text>
+        </View>
+       </View>
+   </TouchableOpacity>
   )
 }
 

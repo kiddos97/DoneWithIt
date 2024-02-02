@@ -18,7 +18,7 @@ const listings = [
   },
 ];
 
-const ListingScreen = () => {
+const ListingScreen = ({navigation }) => {
     const renderSeparator = () => {
         return <View style={{ height: 20 }} />; // Adjust the height as needed
       };
@@ -32,6 +32,7 @@ const ListingScreen = () => {
             title={item.title}
             subTitle={'$ ' + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails",item)}
           />
         )}
         ItemSeparatorComponent={renderSeparator}
