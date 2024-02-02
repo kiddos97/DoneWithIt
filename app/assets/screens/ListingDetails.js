@@ -8,7 +8,7 @@ const ListingDetails = ({ route }) => {
     const listing = route.params;
   return (
   <View>
-    {listing.image && <Image style={styles.image} source={listing.image}/>}
+    {listing.images && <Image style={styles.image} source={listing.images}/>}
       <View style={styles.detailsContainer}>
           <Text style={styles.title}>{listing.title}</Text>
           <Text style={styles.price}>{'$ ' + listing.price}</Text>

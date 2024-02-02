@@ -363,5 +363,16 @@ const TabNavigator = () => (
 
 
 
+apiClient.get('/api/listings')
+  .then(response => {
+    if (response.ok) {
+      console.log('Listings data:', response.data);
+    } else {
+      console.error('Error fetching listings:', response.problem);
+    }
+  })
+  .catch(error => {
+    console.error('Error during fetch:', error);
+  });
 
 

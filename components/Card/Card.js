@@ -1,11 +1,11 @@
 import React from 'react'
 import { View, StyleSheet,Image,Text, TouchableOpacity} from 'react-native'
 
-const Card = ({title, subTitle, image,onPress}) => {
+const Card = ({title, subTitle, imageUrl,onPress}) => {
   return (
    <TouchableOpacity onPress={onPress}>
        <View style={styles.card}>
-        <Image style={styles.image} source={image}/>
+        <Image style={styles.image} source={imageUrl}/>
         <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>{subTitle}</Text>
