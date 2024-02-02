@@ -12,6 +12,7 @@ import colors from '../../../config/colors';
 
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import FeedNavigator from './FeedNavigator';
 
 const ListingNavigator = () => {
 
@@ -31,7 +32,7 @@ const ListingNavigator = () => {
       <Tab.Screen
       name="Feed"
       color={colors.dark}
-      component={ListingScreen}
+      component={FeedNavigator}
       options={({ route }) => ({
         headerShown: false,
         tabBarLabel: 'Feed',
