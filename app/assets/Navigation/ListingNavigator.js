@@ -39,7 +39,22 @@ const ListingNavigator = () => {
     })}
     />
     <Tab.Screen name="New Listing " component={NewListingScreen}/>
-    <Tab.Screen name="Account" component={AccountNavigator} options={{headerShown:false}}/>
+    <Tab.Screen 
+    name="Account" 
+    component={AccountNavigator} 
+    options={({ route }) => ({
+      headerShown: false,
+      tabBarLabel: 'Feed',
+      tabBarIcon: ({ color, size }) => (
+        <MaterialCommunityIcons 
+          name="account" 
+          color={route.name === 'Account' ? 'blue' : color} // Change 'blue' to the desired color
+          size={size} 
+        />
+      ),
+      headerShown:false,
+    })}
+    />
     </Tab.Navigator>
   )
 }
