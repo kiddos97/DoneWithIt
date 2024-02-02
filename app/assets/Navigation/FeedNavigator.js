@@ -8,9 +8,9 @@ import ListingDetails from '../screens/ListingDetails';
 const FeedNavigator = () => {
     const Stack = new createNativeStackNavigator();
   return (
-   <Stack.Navigator initialRouteName="Listing" mode="card">
+   <Stack.Navigator initialRouteName="Listing">
     <Stack.Screen name="Listing" component={ListingScreen}/>
-    <Stack.Screen name="ListingDetails" component={ListingDetails} options={{headerShown:false}} />
+    <Stack.Screen name="ListingDetails" component={ListingDetails} options={{headerShown:false,presentation:'modal'}}/>
    </Stack.Navigator>
   )
 }

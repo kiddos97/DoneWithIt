@@ -11,7 +11,7 @@ const ListingDetails = ({ route }) => {
     <Image style={styles.image} source={listing.image}/>
       <View style={styles.detailsContainer}>
           <Text style={styles.title}>{listing.title}</Text>
-          <Text style={styles.price}>{listing.price}</Text>
+          <Text style={styles.price}>{'$ ' + listing.price}</Text>
           <View style={styles.user}> 
               <ListItem
               image={require('../person.jpg')}
