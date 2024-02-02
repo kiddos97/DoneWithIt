@@ -8,8 +8,8 @@ import ListingDetails from '../screens/ListingDetails';
 const FeedNavigator = () => {
     const Stack = new createNativeStackNavigator();
   return (
-   <Stack.Navigator>
-    <Stack.Screen name="Listing" component={ListingScreen}/>
+   <Stack.Navigator initialRouteName="Listing">
+    <Stack.Screen name="Listing" component={ListingScreen} options={{headerShown:false}}/>
     <Stack.Screen name="ListingDetails" component={ListingDetails}/>
    </Stack.Navigator>
   )
