@@ -31,7 +31,7 @@ useEffect(() => {
           <Card
             title={item.title}
             subTitle={'$ ' + item.price}
-            image={item.images[0].url}
+            imageUrl={item.images[0].url}
             onPress={() => navigation.navigate("ListingDetails",item)}
           />
         )}
