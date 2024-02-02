@@ -13,6 +13,7 @@ import colors from '../../../config/colors';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeedNavigator from './FeedNavigator';
+import TabButton from './TabButton';
 
 const ListingNavigator = () => {
 
@@ -49,17 +50,16 @@ const ListingNavigator = () => {
       <Tab.Screen
       name="Listing"
       component={NewListingScreen}
-      options={({ route }) => ({
+      options={({navigation }) => ({
         headerShown: false,
+        tabBarButton: () => <TabButton onPress={() => navigation.navigate('Listing')}/>,
         tabBarLabel:'Listing',
         tabBarIcon: ({ color,size }) => (
-          <View style={styles.iconContainer}>
           <MaterialCommunityIcons
             name="plus-circle"
-            color={route.name === 'Listing' ? colors.light : color } // Change 'blue' to the desired color
-            size={20}
+            color={color} // Change 'blue' to the desired color
+            size={size}
           />
-          </View>
         ),
         headerShown:false,
       })}
@@ -84,13 +84,6 @@ const ListingNavigator = () => {
   )
 }
 
-const styles = StyleSheet.create({
-  iconContainer:{
-    padding:8,
-    margintop:-10,
-    backgroundColor:colors.danger,
-    borderRadius: 35
-  }
-})
+
 
 export default ListingNavigator
