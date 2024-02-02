@@ -31,24 +31,28 @@ const ListingNavigator = () => {
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons 
           name="home" 
-          color={route.name === 'Feed' ? 'blue' : color} // Change 'blue' to the desired color
+          color={route.name === 'Feed' ? colors.dark : color} // Change 'blue' to the desired color
           size={size} 
         />
       ),
       headerShown:false,
     })}
     />
-    <Tab.Screen name="New Listing " component={NewListingScreen}/>
+    <Tab.Screen
+    name="New Listing "
+    component={NewListingScreen}
+    options={{headerShown:false}}
+    />
     <Tab.Screen 
-    name="Account" 
+    name="AccountNav" 
     component={AccountNavigator} 
     options={({ route }) => ({
       headerShown: false,
-      tabBarLabel: 'Feed',
-      tabBarIcon: ({ color, size }) => (
+      tabBarLabel: 'Account',
+      tabBarIcon: ({ color,size }) => (
         <MaterialCommunityIcons 
           name="account" 
-          color={route.name === 'Account' ? 'blue' : color} // Change 'blue' to the desired color
+          color={route.name === 'AccountNav' ? colors.dark : colors.light } // Change 'blue' to the desired color
           size={size} 
         />
       ),
