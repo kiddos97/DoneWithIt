@@ -14,7 +14,7 @@ import Card from './components/Card/Card';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
-import AuthNavigator from "./app/Navigation/AuthNavigator";
+import AuthNavigator from "./app/assets/Navigation/AuthNavigator";
 import ListingNavigator from './app/assets/Navigation/ListingNavigator';
 
 

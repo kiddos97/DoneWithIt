@@ -5,7 +5,7 @@ const Card = ({title, subTitle, imageUrl,onPress}) => {
   return (
    <TouchableOpacity onPress={onPress}>
        <View style={styles.card}>
-        <Image style={styles.image} source={imageUrl}/>
+        <Image style={styles.image} source={{uri:imageUrl}}/>
         <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subTitle}>{subTitle}</Text>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     card:{
         borderRadius: 15,
         backgroundColor: '#fff',
-        marguinBottom: 20,
+        marginBottom: 20,
         overflow:'hidden',
     },
     image:{

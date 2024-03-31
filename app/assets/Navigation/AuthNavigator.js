@@ -3,9 +3,9 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs" 
 
-import LoginScreen from '../assets/screens/LoginScreen';
-import WelcomeScreen from '../assets/screens/WelcomeScreen';
-import RegisterScreen from '../assets/screens/RegisterScreen';
+import LoginScreen from '../../assets/screens/LoginScreen'
+import WelcomeScreen from '../../assets/screens/WelcomeScreen';
+import RegisterScreen from '../../assets/screens/RegisterScreen';
 
 
 const AuthNavigator = () => {
